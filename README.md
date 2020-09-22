@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+>>>>>>> HEAD
 # CalculatorApp
 A Simple Calculator App 
 =======
@@ -19,3 +19,6 @@ For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 >>>>>>> Added the source files
+=======
+# Calculator
+>>>>>>> 25c4c2105c1beb9001520fcc8f01964db10a1a66

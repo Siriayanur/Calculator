@@ -3,10 +3,7 @@ import 'constants.dart';
 import 'icon_button_calculator.dart';
 import 'button_calculator.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'Calculation_brain.dart';
-CalculationBrain c = CalculationBrain();
-
-
+import 'calculation_brain.dart';
 
 class CalculatorApp extends StatefulWidget {
   @override
@@ -14,6 +11,9 @@ class CalculatorApp extends StatefulWidget {
 }
 
 class _CalculatorAppState extends State<CalculatorApp> {
+
+  CalculationBrain c = CalculationBrain();
+
   @override
   Widget build(BuildContext context) {
     return  MaterialApp(

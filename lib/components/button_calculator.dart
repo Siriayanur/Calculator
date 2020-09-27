@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
-import 'constants.dart';
-
+import '../constants.dart';
+import '../Calculation/calculation_brain.dart';
 
 class ButtonCalc extends StatelessWidget {
   ButtonCalc(
       {@required this.buttonText,
         @required this.buttonColor,
-      @required this.textStyle
+      @required this.textStyle,
+        this.calculationBrain
       });
 
   final String buttonText;
   final Color buttonColor;
   final TextStyle textStyle;
+  final CalculationBrain calculationBrain;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +26,7 @@ class ButtonCalc extends StatelessWidget {
         style: textStyle,
       ),
       onPressed: (){
-        calculation(buttonText);
+        calculationBrain.convertToPostfix(buttonText);
       },
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
       fillColor:buttonColor,

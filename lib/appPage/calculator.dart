@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'constants.dart';
-import 'icon_button_calculator.dart';
-import 'button_calculator.dart';
+import '../constants.dart';
+import '../components/icon_button_calculator.dart';
+import '../components/button_calculator.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'calculation_brain.dart';
+import '../Calculation/calculation_brain.dart';
 
 class CalculatorApp extends StatefulWidget {
   @override
@@ -12,7 +12,7 @@ class CalculatorApp extends StatefulWidget {
 
 class _CalculatorAppState extends State<CalculatorApp> {
 
-  CalculationBrain c = CalculationBrain();
+  CalculationBrain calculator = CalculationBrain();
 
   @override
   Widget build(BuildContext context) {
@@ -45,11 +45,11 @@ class _CalculatorAppState extends State<CalculatorApp> {
                         children: [
                           Container(
                             padding: const EdgeInsets.fromLTRB(10, 5, 5, 0),
-                            child: Text(c.convertToPostfix('12-34'),style: TextStyle(
+                            child: Text(calculator.convertToPostfix('5+(10*6)/3'),style: TextStyle(
                               fontFamily: kFontQuestion ,
                               fontSize: 30,
                               fontWeight: FontWeight.bold,
-                              color: Colors.black
+                              color: Colors.black,
                             ),),
                           ),
                           Container(
@@ -74,6 +74,7 @@ class _CalculatorAppState extends State<CalculatorApp> {
                             buttonText: 'C',
                             buttonColor: kClearButtonColor,
                             textStyle: kClearButtonTextStyle,
+                            calculationBrain: calculator,
                           ),
                           ButtonCalc(
                             buttonText: '(',
@@ -83,6 +84,7 @@ class _CalculatorAppState extends State<CalculatorApp> {
                               color: Color(0xffA5884E),
                               fontSize: 30.0,
                             ),
+                            calculationBrain: calculator,
                           ),
                           ButtonCalc(
                             buttonText: ')',

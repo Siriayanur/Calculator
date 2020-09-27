@@ -13,6 +13,8 @@ class CalculationBrain{
   String _questionString = '0';
   String _answerString;
 
+
+  //Working
   int precedence(String symbol){
     int result;
     switch(symbol){
@@ -38,15 +40,20 @@ class CalculationBrain{
 
   //Validate the Question String
 
-  //Convert to postfix
+  //Convert to postfix => Working
   String convertToPostfix(String question){
     String postfixQuestion = '';
     String ch;
+
     s.push('&');
+
     for(int i = 0 ; i < question.length;i++){
+      //current symbol
       String current = question[i];
+
       if(operands.contains(current)){
         postfixQuestion += current;
+
       } else {
         switch(current){
           case '(' : s.push(current);
@@ -54,23 +61,26 @@ class CalculationBrain{
           case ')' : while((ch = s.pop()) != '('){
             postfixQuestion += ch;
           }
+
           break;
 
           default : while(precedence(current) <= precedence(s.top())){
             postfixQuestion += '#' + s.pop();
           }
           s.push(current);
+          break;
         }
       }
     }
-    while(s.top() != '='){
+    while(s.top() != '&'){
       postfixQuestion += s.pop();
     }
 
-    postfixQuestion += '\0';
-
     return postfixQuestion;
   }
+
+
+
   String validation(String buttonText){
     //Test Cases
 //    if(operands.contains(buttonText) || brackets.contains(buttonText) || operators.contains(buttonText)){
